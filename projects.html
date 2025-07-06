@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adya Varshini – Project Showcase</title>
+ <style>   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0a0a1a;
+    color: #f0f0f5;
+}
+
+header {
+    height: 100vh;
+    background: #0a0a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #c5a3ff;
+}
+
+.scroll-btn {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    background: #ae7aff;
+    color: #0a0a1a;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 15px #ae7aff90;
+    transition: all 0.3s ease;
+}
+.scroll-btn:hover {
+    background: #cda7ff;
+    box-shadow: 0 0 25px #ae7aff;
+}
+
+section.projects {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section.projects h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #c5a3ff;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #1f1f2e;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    position: relative;
+    box-shadow: 0 0 0 transparent;
+    border: 1px solid #46376d;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    border-color: #ae7aff;
+    box-shadow:
+        0 0 10px #ae7aff70,
+        0 0 20px #ae7aff70,
+        0 0 30px #ae7aff80;
+}
+
+.card img {
+    display: none; /* Hide image completely */
+}
+
+.card-content {
+    padding: 20px;
+    text-align: left;
+}
+
+.card-content h3 {
+    color: #c5a3ff;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+
+.card-content p {
+    color: #c3c3cc;
+    font-size: 0.95rem;
+}
+
+.btns {
+    margin-top: 16px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    flex: 1;
+    padding: 10px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.view {
+    background: #ae7aff;
+    color: #0a0a1a;
+    box-shadow: 0 0 10px #ae7aff80;
+}
+.view:hover {
+    background: #cda7ff;
+    box-shadow: 0 0 20px #ae7aff;
+}
+
+.code {
+    background: #46376d;
+    color: #f0f0f5;
+}
+.code:hover {
+    background: #5a448f;
+    box-shadow: 0 0 10px #5a448f99;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .3s;
+    z-index: 10;
+}
+
+.modal.open {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    height: 80vh;
+    background: #0a0a1a;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.modal-content iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #ae7aff;
+    color: #0a0a1a;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 0 10px #ae7aff80;
+}
+.modal-close:hover {
+    background: #cda7ff;
+}
+</style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Project Portfolio</h1>
+        <button class="scroll-btn" onclick="document.querySelector('section.projects').scrollIntoView({ behavior:'smooth' })">
+            View My Work
+        </button>
+    </header>
+
+    <section class="projects">
+        <h2>Featured Projects</h2>
+        <div class="grid">
+
+           
+    <div class="grid">
+            <!-- Forbidden Temptation -->
+            <div class="card" data-live="https://f-t.vercel.app/">
+                <img src="https://via.placeholder.com/600x400?text=Forbidden+Temptation" />
+                <div class="card-content">
+                    <h3>Forbidden Temptation</h3>
+                    <p>Premium chocolate brand site with parallax and cart features.</p>
+                    <div class="btns">
+                        <button class="btn view">View Live</button>
+                        <button class="btn code" onclick="window.open('https://github.com/adya-varshini/forbidden-temptation','_blank')">GitHub</button>
+                    </div>
+                </div>
+            </div>
+ <div class="card" data-live="https://www.ireadmagma.com/">
+                <img src="https://via.placeholder.com/600x400?text=ChronoAI" />
+                <div class="card-content">
+                    <h3>VITAP-IReadMagma</h3>
+                    <p> Developed a web-based content coordination tool to streamline physics event 
+management. 
+</p>
+                    <div class="btns">
+                        <button class="btn view">View Live</button>
+                        <button class="btn code" onclick="window.open('https://github.com/adya-varshini/chronoAI','_blank')">GitHub</button>
+                    </div>
+                </div>
+            </div>
+           
+
+            <!-- VITAPMM -->
+            <div class="card" data-live="https://vitapmm.vercel.app/">
+                <img src="https://via.placeholder.com/600x400?text=VITAPMM" />
+                <div class="card-content">
+                    <h3>VITAPMM</h3>
+                    <p>University internal portal for academic and department workflows.</p>
+                    <div class="btns">
+                        <button class="btn view">View Live</button>
+                        <button class="btn code" onclick="window.open('https://github.com/adya-varshini/vitapmm','_blank')">GitHub</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Intelligent Crime System -->
+            <div class="card" data-live="https://crime-vision.vercel.app/">
+                <img src="https://via.placeholder.com/600x400?text=Crime+Vision" />
+                <div class="card-content">
+                    <h3>Intelligent Crime System</h3>
+                    <p>Soft computing-based system for crime pattern detection.</p>
+                    <div class="btns">
+                        <button class="btn view">View Live</button>
+                        <button class="btn code" onclick="window.open('https://github.com/adya-varshini/intelligent-crime-system','_blank')">GitHub</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gmail Clone -->
+            <div class="card" data-live="https://clone-ht.web.app/">
+                <img src="https://via.placeholder.com/600x400?text=Gmail+Clone" />
+                <div class="card-content">
+                    <h3>Gmail Clone</h3>
+                    <p>A functional clone of Gmail built with frontend tools and Firebase.</p>
+                    <div class="btns">
+                        <button class="btn view">View Live</button>
+                        <button class="btn code" onclick="window.open('https://github.com/adya-varshini/gmail-clone','_blank')">GitHub</button>
+                    </div>
+                </div>
+            </div>
+             <!-- Online Journal Platform with Figma Embed -->
+            <div class="card" data-live="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/9o2P7kI9wZrBtSTHnxqflm/Journal?node-id=0-1&t=udfbeIphiWJP2EyA-1">
+                <img src="https://via.placeholder.com/600x400?text=Online+Journal" />
+                <div class="card-content">
+                    <h3>Online Journal Platform – UI/UX Case Study</h3>
+                    <p>Designed an emotionally intuitive journaling interface with distraction-free writing space and seamless navigation.</p>
+                    <div class="btns">
+                        <button class="btn view">View Design</button>
+                        <button class="btn code" onclick="window.open('https://github.com/adya-varshini/intelligent-crime-system','_blank')">GitHub</button>
+                    </div>
+                </div>
+            </div>
+             <!-- ChronoAI -->
+           <div class="card" data-live="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/4Avbulc0RYVh6Ay9CJtqmS/Untitled?t=6Z8ui2Ow4dCKm2O7-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&node-id=1-8&starting-point-node-id=1%3A8">
+                <img src="https://via.placeholder.com/600x400?text=Online+Journal" />
+                <div class="card-content">
+                    <h3>Fruitiva UI/UX Case Study</h3>
+                    <p>Designed an prototype interface.. </p>
+                    <div class="btns">
+                        <button class="btn view">View Design</button>
+                        <button class="btn code" onclick="window.open('https://github.com/adya-varshini/intelligent-crime-system','_blank')">GitHub</button>
+                    </div>
+                </div>
+            </div>
+            <!-- You can include your other projects below (like Forbidden Temptation, VITAPMM, etc.) -->
+<div class="card" data-live="https://chrono-ai-five.vercel.app/">
+                <img src="https://via.placeholder.com/600x400?text=Gmail+Clone" />
+                <div class="card-content">
+                    <h3>ChronoAI</h3>
+                    <p> Created an intelligent scheduling platform that uses ML models to recommend 
+optimal time slots.</p>
+                    <div class="btns">
+                        <button class="btn view">View Live</button>
+                        <button class="btn code" onclick="window.open('https://github.com/adya-varshini/gmail-clone','_blank')">GitHub</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">Close</button>
+            <iframe id="modalFrame" src=""></iframe>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.card .view').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const card = btn.closest('.card');
+                const url = card.getAttribute('data-live');
+                document.getElementById('modalFrame').src = url;
+                document.getElementById('modal').classList.add('open');
+            });
+        });
+
+        function closeModal() {
+            document.getElementById('modal').classList.remove('open');
+            document.getElementById('modalFrame').src = '';
+        }
+    </script>
+
+</body>
+
+</html>
+
