@@ -349,7 +349,7 @@ optimal time slots.</p>
     </div>
 
     
-       <script>
+<script>
     document.querySelectorAll('.card .view').forEach(btn => {
         btn.addEventListener('click', () => {
             const card = btn.closest('.card');
@@ -357,10 +357,13 @@ optimal time slots.</p>
             const modal = document.getElementById('modal');
             const modalFrame = document.getElementById('modalFrame');
 
-            // Check if the URL is an image
-            if (url.match(/\.(jpeg|jpg|png|gif)$/i)) {
-                modalFrame.src = ''; // Clear existing src
-                modalFrame.srcdoc = `
+            // Reset both src and srcdoc
+            modalFrame.removeAttribute('src');
+            modalFrame.removeAttribute('srcdoc');
+
+            if (url.match(/\.(jpeg|jpg|png|gif|webp)$/i)) {
+                // Display image inside iframe using srcdoc
+                modalFrame.setAttribute('srcdoc', `
                     <style>
                         body {
                             margin: 0;
@@ -376,12 +379,11 @@ optimal time slots.</p>
                             border-radius: 8px;
                         }
                     </style>
-                    <img src="${url}" alt="Graphic Design" />
-                `;
+                    <img src="${url}" alt="Graphic Project">
+                `);
             } else {
-                // For normal live links (websites, figma, etc.)
-                modalFrame.srcdoc = '';
-                modalFrame.src = url;
+                // Open normal website/Figma/etc.
+                modalFrame.setAttribute('src', url);
             }
 
             modal.classList.add('open');
@@ -392,10 +394,13 @@ optimal time slots.</p>
         const modal = document.getElementById('modal');
         const modalFrame = document.getElementById('modalFrame');
         modal.classList.remove('open');
-        modalFrame.src = '';
-        modalFrame.srcdoc = '';
+
+        // Clear iframe contents
+        modalFrame.removeAttribute('src');
+        modalFrame.removeAttribute('srcdoc');
     }
 </script>
+
 
    
 
